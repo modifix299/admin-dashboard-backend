@@ -44,7 +44,7 @@ const authAdmin = asyncHandler(async (req, res, next) => {
             const decoded = jwt.verify(token, process.env.JWT_SECRET)
 
             // Get user from the token
-            user = await User.findById(decoded.id).select('-password')
+            const user = await User.findById(decoded.id).select('-password')
 
             if(user.role != 'Admin'){
                 res.status(401).json({
