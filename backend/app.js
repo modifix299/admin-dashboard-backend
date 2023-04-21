@@ -17,6 +17,7 @@ app.use(errorHandler)
 
 //Routes
 app.use('/users', require('./routes/userRoutes'));
+app.use('/customers', require('./routes/customerRoutes'));
 app.use('/products', require('./routes/productRoutes'));
 app.use('/admin/auth', require('./routes/adminAuthRoutes.js'));
  
