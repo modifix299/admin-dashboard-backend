@@ -1,12 +1,12 @@
 const express = require('express')
 const router = express.Router()
 const {
-  loginUser,
+  loginCustomer,
   getMe,
-} = require('../controllers/adminaAuthController')
+} = require('../controllers/customerAuthController')
 const { protect } = require('../middleware/authMiddleware')
 
 router.get('/me', protect, getMe)
-router.post('/login', loginUser)
+router.post('/login', loginCustomer)
 
 module.exports = router

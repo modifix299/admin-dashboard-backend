@@ -1,13 +1,13 @@
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const asyncHandler = require('express-async-handler')
-const User = require('../models/userModel')
+const Customer = require('../models/customerModel')
 
 
-// @desc    Authenticate a user
-// @route   POST /api/users/login
+// @desc    Authenticate a customer
+// @route   POST /api/customer/login
 // @access  Public
-const loginUser = asyncHandler(async (req, res) => {
+const loginCustomer = asyncHandler(async (req, res) => {
     const { email, password } = req.body
   
     if(!email || !password){
@@ -15,20 +15,19 @@ const loginUser = asyncHandler(async (req, res) => {
     }
 
     // Check for user email
-    const user = await User.findOne({ email })
+    const customer = await Customer.findOne({ email })
 
-    if(user.active)
+    if(customer.active)
     {
-        if (user && (await bcrypt.compare(password, user.password)))
+        if (customer && (await bcrypt.compare(password, customer.password)))
         {
             res.json({
-                _id: user.id,
-                firstname: user.firstname,
-                lastname: user.lastname,
-                name: user.name,
-                email: user.email,
-                role: user.role,
-                token: generateToken(user._id),
+                _id: customer.id,
+                firstname: customer.firstname,
+                lastname: customer.lastname,
+                name: customer.name,
+                email: customer.email,
+                token: generateToken(customer._id),
             })
         } else {
             res.status(401).json({ message: 'Invalid credentials' })
@@ -41,11 +40,11 @@ const loginUser = asyncHandler(async (req, res) => {
     
 })
   
-// @desc    Get user data
-// @route   GET /api/users/me
+// @desc    Get customer data
+// @route   GET /api/customer/me
 // @access  Private
 const getMe = asyncHandler(async (req, res) => {
-    res.status(200).json(req.user)
+    res.status(200).json(req.customer)
 })
   
 // Generate JWT
@@ -54,7 +53,7 @@ const generateToken = (id) => {
 }
   
 module.exports = {
-    loginUser,
+    loginCustomer,
     getMe,
 }
   
