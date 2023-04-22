@@ -6,7 +6,7 @@ const {
 } = require('../controllers/adminaAuthController')
 const { protect } = require('../middleware/authMiddleware')
 
-router.get('/me', protect, getMe)
+router.get('/me', getMe)
 router.post('/login', loginUser)
 
 module.exports = router
