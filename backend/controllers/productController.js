@@ -17,8 +17,14 @@ const getAllProducts = (async (req, res) => {
 });
 
 //Create new product
+
+
+
 const createNewProduct = (async (req, res) => {
+    
     const {productname, price, quantity} = req.body;
+
+    
 
     // Confirm all data fields
     if ( !productname || !price || !quantity ) {
