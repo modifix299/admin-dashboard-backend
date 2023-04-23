@@ -26,6 +26,8 @@ const Authenticated = () => {
     }
 
   return content;
+
+  
 }
 
 export default Authenticated

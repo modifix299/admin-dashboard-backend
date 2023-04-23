@@ -53,7 +53,7 @@ const Products = () => {
                                     <td>{product.price}</td>
                                     <td>{product.quantity}</td>
                                     <td>
-                                        <Link to={`/admin/products/edit/${product._id}`} className='btn btn-md btn-warning'>Edit</Link>
+                                        <Link to={`admin/products/edit/${product._id}`} className='btn btn-md btn-warning'>Edit</Link>
                                     </td>
                                 </tr>
                             ))}                                

@@ -11,10 +11,10 @@ const initialState = {
     message: '',
 }
 
-// Get All Users reducer
+// Get All Products reducer
 export const getProducts = createAsyncThunk('products/getAll', async (_, thunkAPI) => {
         try {
-            const token = thunkAPI.getState().auth.product.token;
+            const token = thunkAPI.getState().auth.user.token;
             return await productService.getAllProducts(token);
         } catch (error) {
             const message =
@@ -28,10 +28,10 @@ export const getProducts = createAsyncThunk('products/getAll', async (_, thunkAP
     }
 );
 
-// Get One Users reducer
+// Get One Products reducer
 export const getProduct = createAsyncThunk('products/getOne', async (id, thunkAPI) => {
   try {
-      const token = thunkAPI.getState().auth.product.token;
+      const token = thunkAPI.getState().auth.user.token;
       return await productService.getOneProduct(id,token);
   } catch (error) {
       const message =
@@ -45,10 +45,10 @@ export const getProduct = createAsyncThunk('products/getOne', async (id, thunkAP
 }
 );
 
-// Create new User
+// Create new Product
 export const createProduct = createAsyncThunk('products/create',async (data, thunkAPI) => {
     try {
-      const token = thunkAPI.getState().auth.product.token
+      const token = thunkAPI.getState().auth.user.token
       return await productService.createProduct(data, token)
     } catch (error) {
       const message =
@@ -62,7 +62,7 @@ export const createProduct = createAsyncThunk('products/create',async (data, thu
   }
 )
 
-// Create new User
+// Create new Product
 export const updateProduct = createAsyncThunk('products/update',async (data, thunkAPI) => {
   try {
     const token = thunkAPI.getState().auth.user.token

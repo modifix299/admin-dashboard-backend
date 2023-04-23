@@ -9,8 +9,8 @@ import CreateUser from './views/users/createUser';
 import Login from './views/auth/Login';
 import NotAuthorized from './views/other/401';
 import NotFound from './views/other/404';
-import Products from './views/product/Products';
-import CreateProduct from './views/product/createProduct'
+import Products from './views/products/Products';
+import CreateProduct from './views/products/createProduct'
 // import EditProducts from './views/product/updateProduct';
 import EditUser from './views/users/editUser';
 import Authorized from './components/Authorized';
@@ -40,7 +40,6 @@ function App() {
                     </Route>
 
                     <Route path="not-authorized" element={<NotAuthorized/>} />
-                    <Route path="*" element={<NotFound/>} />
                     <Route path='new' element={<CreateProduct />} />
                     {/* <Route path='edit/:id' element={<EditProduct />} /> */}
 
