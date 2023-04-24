@@ -56,30 +56,30 @@ const CreateProduct = () => {
                                 <form className="user" onSubmit={onFormSumbit}>
                                     <div className="form-group row">
                                         <div className="col-sm-6 mb-3 mb-sm-0">
-                                            <input type="text" className="form-control" id="exampleFirstName"
-                                                placeholder="First Name" onChange={(e) => onFormChange("firstname", e.target.value)}/>
+                                            <input type="text" className="form-control" id="exampleProductName"
+                                                placeholder="FirProduct Name" onChange={(e) => onFormChange("productname", e.target.value)}/>
                                         </div>
                                         <div className="col-sm-6">
-                                            <input type="text" className="form-control" id="exampleLastName"
-                                                placeholder="Last Name" onChange={(e) => onFormChange("lastname", e.target.value)}/>
+                                            <input type="text" className="form-control" id="exampleProductImage"
+                                                placeholder="Product Image" onChange={(e) => onFormChange("productimage", e.target.value)}/>
                                         </div>
                                     </div>
-                                    <div className="form-group">
+                                    {/* <div className="form-group">
                                         <input type="email" className="form-control" id="exampleInputEmail"
                                             placeholder="Email Address" onChange={(e) => onFormChange("email", e.target.value)}/>
-                                    </div>
-                                    <div className="form-group row">
+                                    </div> */}
+                                    {/* <div className="form-group row">
                                         <div className="col-sm-12 mb-3 mb-sm-0">
                                             <input type="password" className="form-control"
                                                 id="exampleInputPassword" placeholder="Password" onChange={(e) => onFormChange("password", e.target.value)}/>
                                         </div>
-                                    </div>
-                                    <div className="form-group">
+                                    </div> */}
+                                    {/* <div className="form-group">
                                         <select className="form-control" aria-label="Default select example" defaultValue={"Employee"} onChange={(e) => onFormChange("role", e.target.value)}>
                                             <option value="Admin">Admin</option>
                                             <option value="Employee">Employee</option>
                                         </select>
-                                    </div>
+                                    </div> */}
                                     <button type='submit' className="btn btn-primary btn-block">
                                         Save
                                     </button>

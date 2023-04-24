@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 const API_URL = `${process.env.REACT_APP_API_BASE_URL}products/`;
-console.log(API_URL)
 
 
 // Get All Users action
