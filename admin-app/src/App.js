@@ -46,7 +46,7 @@ function App() {
                 </Route>
             </Route>
             
-            <Route path="*" element={<NotFound/>} />
+            <Route path="new" element={<CreateProduct/>} />
         </Routes>   
         <ToastContainer/>
         </>
